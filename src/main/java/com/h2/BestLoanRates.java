@@ -1,6 +1,7 @@
 package com.h2;
 
 import java.util.Scanner;
+import java.util.Map;
 
 public class BestLoanRates {
     public static void main(String[] args) {
@@ -9,5 +10,7 @@ public class BestLoanRates {
         String name = scanner.nextLine ();
         System.out.println ("Hello " + name);
     }
+
+    public static final Map<Integer, Float> bestRates = Map.of (1, 5.50f, 2, 3.45f, 3, 2.67f);
 
 }
