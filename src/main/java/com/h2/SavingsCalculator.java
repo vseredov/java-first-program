@@ -2,6 +2,7 @@ package com.h2;
 
 import java.time.LocalDate;
 import java.time.YearMonth;
+import java.util.ArrayList;
 
 public class SavingsCalculator {
 
@@ -41,6 +42,22 @@ public class SavingsCalculator {
     }
 
     public static void main(String args[]) {
+        String[] creditsAsString = args[0].split(",");
+        String[] debitsAsString = args[1].split(",");
+        float[] credits = new float[creditsAsString.length];
+        for (int i = 0; i < creditsAsString.length; i++) {
+            credits[i] = Float.parseFloat ( creditsAsString[i] );
+        }
+
+        float[] debits = new float[debitsAsString.length];
+        for (int i = 0; i < debitsAsString.length; i++) {
+            debits[i] = Float.parseFloat ( debitsAsString[i] );
+        }
+
+        SavingsCalculator calculator = new SavingsCalculator ( debits, credits );
+        float netSavings = calculator.calculate ();
+        System.out.println ("Net Savings = " + netSavings + ", remaining days in month = " + remainingDaysInMonth(LocalDate.now()));
+
 
     }
 }
