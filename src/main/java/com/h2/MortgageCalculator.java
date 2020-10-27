@@ -22,4 +22,8 @@ public class MortgageCalculator {
         return interestRate/12.0f;
     }
 
+    public void calculateMonthlyPayment() {
+        
+    }
+
 }
