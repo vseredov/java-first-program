@@ -16,4 +16,8 @@ public class MortgageCalculator {
         return 12*termInYears;
     }
 
+    private float getMonthlyInterestRate() {
+        return 0.0f;
+    }
+
 }
