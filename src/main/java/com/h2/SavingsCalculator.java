@@ -35,5 +35,4 @@ public class SavingsCalculator {
         int remainingDays = date.getDayOfMonth ();
         return remainingDays;
     }
-
 }
