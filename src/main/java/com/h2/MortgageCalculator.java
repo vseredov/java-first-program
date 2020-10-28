@@ -1,7 +1,9 @@
 package com.h2;
 
 import java.text.DecimalFormat;
-
+//import java.text.NumberFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
 
 public class MortgageCalculator {
     private long loanAmount;
@@ -33,8 +35,21 @@ public class MortgageCalculator {
     }
 
     public String toString() {
-        DecimalFormat df = new DecimalFormat ("####0.00");
-        return "monthlyPayment: " + df.format(monthlyPayment);
+ //       DecimalFormat df = new DecimalFormat ("####0.00");
+        String formatString = "####0.00";
+        DecimalFormatSymbols otherSymbols = new DecimalFormatSymbols(Locale.getDefault());
+        otherSymbols.setDecimalSeparator('.');
+        //otherSymbols.setGroupingSeparator(',');
+
+        DecimalFormat df = new DecimalFormat(formatString, otherSymbols);
+
+
+//        return ("monthlyPayment: " + df.format(monthlyPayment)).replaceAll("\r", "");
+System.lineSeparator ();
+        return ("monthlyPayment: " + df.format(monthlyPayment)).
+                replaceAll("\\r\\n", "\n").
+                replaceAll("\\r", "\n").
+                replaceAll("\r", "");
     }
 
     public static void main(String [] args) {
@@ -43,9 +58,7 @@ public class MortgageCalculator {
         float annualRate = Float.parseFloat ( args[2] );
 
         MortgageCalculator calculator = new MortgageCalculator ( loanAmount, termInYears, annualRate);
-
-        System.out.println (calculator.toString ());
-
-
+        calculator.calculateMonthlyPayment ();
+        System.out.println (calculator.toString ().replaceAll("\r", ""));
     }
 }
