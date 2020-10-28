@@ -35,11 +35,11 @@ public class Finance {
                 BestLoanRates.main ( arguments );
                 return;
             case SAVINGS_CALCULATOR:
-                System.out.println ("sdfsdfsfgdjyjfs");
+                System.out.println ("Finding your net savings ...");
                 SavingsCalculator.main ( arguments );
                 return;
             case MORTGAGE_CALCULATOR:
-                System.out.println ("zzzFinding your monthly payment ...");
+                System.out.println ("Finding your monthly payment ...");
                 MortgageCalculator.main ( arguments );
                 return;
         }
