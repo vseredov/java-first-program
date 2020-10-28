@@ -11,7 +11,7 @@ public class Finance {
             SAVINGS_CALCULATOR, "usage: savingsCalculator <credits separated by ','> <debits separated by ','>",
             MORTGAGE_CALCULATOR, "usage: mortgageCalculator <loanAmount> <termInYears> <annualRate>");
 
-    public static boolean validateCommandArguments(String [] args) {
+    private static boolean validateCommandArguments(String [] args) {
         return false;
     }
 }
