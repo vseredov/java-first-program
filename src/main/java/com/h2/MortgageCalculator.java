@@ -1,5 +1,7 @@
 package com.h2;
 
+import java.lang.Object;
+
 public class MortgageCalculator {
     private long loanAmount;
     private int termInYears;
@@ -30,4 +32,7 @@ public class MortgageCalculator {
         this.monthlyPayment = M;
     }
 
+    public String toString() {
+        return "hello";
+    }
 }
