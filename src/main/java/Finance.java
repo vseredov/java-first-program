@@ -34,9 +34,8 @@ public class Finance {
                 System.out.println ("Finding best loan rates ...");
                 BestLoanRates.main ( arguments );
                 return;
-
             case SAVINGS_CALCULATOR:
-                System.out.println ("Finding your net savings ...");
+                System.out.println ("sdfsdfsfgdjyjfs");
                 SavingsCalculator.main ( arguments );
                 return;
             case MORTGAGE_CALCULATOR:
@@ -50,6 +49,7 @@ public class Finance {
         String command = args[0];
         if(!commandsToUsage.containsKey ( command )) {
             System.out.println (command + ": command not found");
+            return;
         }
 
         boolean isValid = validateCommandArguments(args);
