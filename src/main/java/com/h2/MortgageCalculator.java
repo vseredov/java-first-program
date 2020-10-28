@@ -1,6 +1,7 @@
 package com.h2;
 
-import java.lang.Object;
+import java.text.DecimalFormat;
+
 
 public class MortgageCalculator {
     private long loanAmount;
@@ -20,7 +21,6 @@ public class MortgageCalculator {
 
     private float getMonthlyInterestRate() {
         float interestRate = annualRate/100.0f;
-
         return interestRate/12.0f;
     }
 
@@ -33,6 +33,7 @@ public class MortgageCalculator {
     }
 
     public String toString() {
-        return "hello";
+        DecimalFormat df = new DecimalFormat ("####0.00");
+        return "monthlyPayment: " + df.format(monthlyPayment);;
     }
 }
