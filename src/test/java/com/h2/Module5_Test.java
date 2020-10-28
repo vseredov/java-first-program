@@ -311,14 +311,14 @@ public class Module5_Test {
         {
             String command = "LaunchRocketToMoon";
             method.invoke(null, (Object) new String[]{command});
-            assertEquals(command + ": command not found" + System.lineSeparator (), testOut.toString());
+            assertEquals(command + ": command not found" + "\n", testOut.toString());
         }
         {
             setUpOutput();
             final String loanAmount = "264000";
             final String termInYears = "30";
             method.invoke(null, (Object) new String[]{"mortgageCalculator", loanAmount, termInYears});
-            assertEquals("usage: mortgageCalculator <loanAmount> <termInYears> <annualRate>" + System.lineSeparator (), testOut.toString());
+            assertEquals("usage: mortgageCalculator <loanAmount> <termInYears> <annualRate>" + "\n", testOut.toString());
         }
         {
             setUpOutput();
