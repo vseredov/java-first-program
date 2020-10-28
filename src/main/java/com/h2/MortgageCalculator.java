@@ -39,17 +39,9 @@ public class MortgageCalculator {
         String formatString = "####0.00";
         DecimalFormatSymbols otherSymbols = new DecimalFormatSymbols(Locale.getDefault());
         otherSymbols.setDecimalSeparator('.');
-        //otherSymbols.setGroupingSeparator(',');
-
         DecimalFormat df = new DecimalFormat(formatString, otherSymbols);
 
-
-//        return ("monthlyPayment: " + df.format(monthlyPayment)).replaceAll("\r", "");
-System.lineSeparator ();
-        return ("monthlyPayment: " + df.format(monthlyPayment)).
-                replaceAll("\\r\\n", "\n").
-                replaceAll("\\r", "\n").
-                replaceAll("\r", "");
+        return ("monthlyPayment: " + df.format(monthlyPayment));
     }
 
     public static void main(String [] args) {
